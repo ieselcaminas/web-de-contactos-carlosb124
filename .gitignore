@@ -8,3 +8,18 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+<<<<<<< HEAD
+=======
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+/var
+/vendor
+>>>>>>> e32fc08794f3f91c196b1f8bfe8205a51cb24ea2

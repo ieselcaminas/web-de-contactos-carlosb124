@@ -1,8 +1,16 @@
 framework:
     router:
+<<<<<<< HEAD
         # Configure how to generate URLs in non-HTTP contexts, such as CLI commands.
         # See https://symfony.com/doc/current/routing.html#generating-urls-in-commands
         default_uri: '%env(DEFAULT_URI)%'
+=======
+        utf8: true
+
+        # Configure how to generate URLs in non-HTTP contexts, such as CLI commands.
+        # See https://symfony.com/doc/current/routing.html#generating-urls-in-commands
+        #default_uri: http://localhost
+>>>>>>> e32fc08794f3f91c196b1f8bfe8205a51cb24ea2
 
 when@prod:
     framework:

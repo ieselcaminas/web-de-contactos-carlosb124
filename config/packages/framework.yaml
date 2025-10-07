@@ -1,12 +1,30 @@
 # see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
     secret: '%env(APP_SECRET)%'
+<<<<<<< HEAD
 
     # Note that the session will be started ONLY if you read or write from it.
     session: true
 
     #esi: true
     #fragments: true
+=======
+    #csrf_protection: true
+    http_method_override: false
+
+    # Enables session support. Note that the session will ONLY be started if you read or write from it.
+    # Remove or comment this section to explicitly disable session support.
+    session:
+        handler_id: null
+        cookie_secure: auto
+        cookie_samesite: lax
+        storage_factory_id: session.storage.factory.native
+
+    #esi: true
+    #fragments: true
+    php_errors:
+        log: true
+>>>>>>> e32fc08794f3f91c196b1f8bfe8205a51cb24ea2
 
 when@test:
     framework:

@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+<<<<<<< HEAD
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -59,10 +60,33 @@ class ContactoController extends AbstractController
          'contacto' => $resultado
          ]);
 
+=======
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+
+class ContactoController extends AbstractController
+{
+  
+     #[Route('/contacto/{codigo}', name: 'ficha_contacto')]
+ 
+   public function ficha($codigo): Response
+   {
+       $resultado = $this->contactos[$codigo] ?? null;
+
+
+       if($resultado){
+           return $this->render('contacto/ficha_contacto.html.twig', [
+               'codigo' => $resultado
+           ]);
+>>>>>>> e32fc08794f3f91c196b1f8bfe8205a51cb24ea2
        }else{
            return new Response("<html><body>Contacto $codigo no encontrado</body></html>");
        }
    }
+<<<<<<< HEAD
     #[Route('/contacto/buscar/{texto}', name: 'buscar_contacto')]
     public function buscar(ManagerRegistry $doctrine, $texto): Response
 {
@@ -124,9 +148,14 @@ public function delete(ManagerRegistry $doctrine, $id): Response{
     }
 
 }
+=======
+>>>>>>> e32fc08794f3f91c196b1f8bfe8205a51cb24ea2
 }
 
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e32fc08794f3f91c196b1f8bfe8205a51cb24ea2

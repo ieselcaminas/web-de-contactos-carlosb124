@@ -15,6 +15,13 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/'
+<<<<<<< HEAD
+=======
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+>>>>>>> e32fc08794f3f91c196b1f8bfe8205a51cb24ea2
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
