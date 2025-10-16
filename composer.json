@@ -1,0 +1,58 @@
+{
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.2",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "doctrine/dbal": "^3",
+        "doctrine/doctrine-bundle": "^2.16",
+        "doctrine/doctrine-migrations-bundle": "^3.4",
+        "doctrine/orm": "^3.5",
+        "symfony/console": "7.3.*",
+        "symfony/dotenv": "7.3.*",
+        "symfony/flex": "^2",
+        "symfony/framework-bundle": "7.3.*",
+        "symfony/runtime": "7.3.*",
+        "symfony/twig-bundle": "7.3.*",
+        "symfony/yaml": "7.3.*",
+        "twig/extra-bundle": "*",
+        "symfony/security-bundle": "*",
+        "symfony/monolog-bundle": "*",
+        "symfony/debug-bundle": "*",
+        "symfony/translation": "*",
+        "symfony/mailer": "*",
+        "symfony/validator": "^7.3",
+        "symfony/messenger": "*",
+        "symfony/notifier": "*",
+        "symfony/asset": "^7.3",
+        "symfony/form": "^7.3"
+    },
+    "require-dev": {
+        "symfony/maker-bundle": "^1.64",
+        "phpunit/phpunit": "^9.5",
+        "symfony/web-profiler-bundle": "*"
+    },
+    "autoload": {
+        "psr-4": { "App\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "App\\Tests\\": "tests/" }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": { "*": "dist" },
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": ["@auto-scripts"],
+        "post-update-cmd": ["@auto-scripts"]
+    }
+}
