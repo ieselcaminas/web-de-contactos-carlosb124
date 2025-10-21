@@ -17,7 +17,7 @@
         "symfony/twig-bundle": "7.3.*",
         "symfony/yaml": "7.3.*",
         "twig/extra-bundle": "*",
-        "symfony/security-bundle": "*",
+        "symfony/security-bundle": "^7.3",
         "symfony/monolog-bundle": "*",
         "symfony/debug-bundle": "*",
         "symfony/translation": "*",
