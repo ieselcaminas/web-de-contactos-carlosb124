@@ -1,0 +1,18 @@
+<ul>
+    <li><strong>{{ contacto.nombre }}</strong></li>
+    <li><strong>Teléfono</strong>: {{ contacto.telefono }}</li>
+
+    {% if contacto.provincia is defined and contacto.provincia is not null %}
+        <li><strong>Provincia</strong>: {{ contacto.provincia.nombre }}</li>
+    {% else %}
+        <li><strong>Provincia</strong>: Sin provincia</li>
+    {% endif %}
+
+    <li><strong>E-mail</strong>: {{ contacto.email }}</li>
+</ul>
+
+<div style="margin-left: 20px; margin-bottom: 20px;">
+    <a href="{{ path('editar', {codigo: contacto.id}) }}">✏️ Editar</a> |
+    <a href="{{ path('eliminar_contacto', {id: contacto.id}) }}" onclick="return confirm('¿Seguro que quieres borrar este contacto?');">🗑️ Borrar</a>
+</div>
+<hr>

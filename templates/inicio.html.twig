@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-3 text-center text-primary">📇 Lista de Contactos</h1>
+
+    <div class="text-end mb-4">
+        <a href="{{ path('nuevo') }}" class="btn btn-success">➕ Nuevo contacto</a>
+    </div>
+
+    <div class="row">
+        {% for contacto in contactos %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ contacto.nombre }}</h5>
+                        <p class="card-text">
+                            <strong>Teléfono:</strong> {{ contacto.telefono }}<br>
+                            <strong>Email:</strong> {{ contacto.email }}<br>
+                            <strong>Provincia:</strong>
+                            {% if contacto.provincia is defined and contacto.provincia is not null %}
+                                {{ contacto.provincia.nombre }}
+                            {% else %}
+                                <em>Sin provincia</em>
+                            {% endif %}
+                        </p>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ path('editar', {codigo: contacto.id}) }}" class="btn btn-warning btn-sm">✏️ Editar</a>
+                            <a href="{{ path('eliminar_contacto', {id: contacto.id}) }}"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('¿Seguro que quieres borrar este contacto?');">
+                               🗑️ Borrar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p class="text-muted">No hay contactos registrados.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

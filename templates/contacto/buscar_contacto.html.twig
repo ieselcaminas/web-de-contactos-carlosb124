@@ -1,0 +1,15 @@
+<h1>Resultados de búsqueda para "{{ texto }}"</h1>
+
+{% if contactos is not empty %}
+    <ul>
+        {% for contacto in contactos %}
+            <li>
+                <strong>{{ contacto.nombre }}</strong> - 
+                Teléfono: {{ contacto.telefono }} - 
+                Email: {{ contacto.email }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron contactos para "{{ texto }}"</p>
+{% endif %}
